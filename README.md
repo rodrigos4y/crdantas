@@ -1,27 +1,31 @@
-# Crdantas
+# CR Dantas
+> Website do escritório de advocacia CR Dantas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+Esse projeto é o desenvolvimento do website do escritório de advocacia CR Dantas.
 
-## Development server
+## Versioning
+To keep better organization of releases we follow the [https://semver.org/](Semantic Versioning 2.0.0) guidelines.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Contributing
+Find on our [https://github.com/rodrigos4y/basic-js/issues](issues) the next steps of the project ;)
+Want to contribute? Follow these recommendations.
 
-## Code scaffolding
+## History
+See [https://github.com/rodrigos4y/crdantas/releases](Releases) for detailed changelog.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Meta
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Rodrigo Dias de Freitas – [https://rodrigos4y.github.io/](https://rodrigos4y.github.io/) – rodrigo@rdfreitas.com.br
 
-## Running unit tests
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[https://github.com/rodrigos4y](https://github.com/rodrigos4y)
 
-## Running end-to-end tests
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/seunome/seuprojeto/wiki
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
