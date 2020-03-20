@@ -8,7 +8,7 @@ To keep better organization of releases we follow the [https://semver.org/](Sema
 
 ## Releases
 
-**[https://github.com/rodrigos4y/crdantas/releases/tag/v1.0.0](Release 1.0.0)**
+[https://github.com/rodrigos4y/crdantas/releases/tag/v1.0.0](**Release 1.0.0**)
 - Versão direto do desenvolvimento
 - Sem acertos ou traduções
 - Conteúdo em inglês e Português
