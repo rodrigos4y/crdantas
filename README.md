@@ -6,6 +6,13 @@ Esse projeto é o desenvolvimento do website do escritório de advocacia CR Dant
 ## Versioning
 To keep better organization of releases we follow the [https://semver.org/](Semantic Versioning 2.0.0) guidelines.
 
+## Releases
+
+**[https://github.com/rodrigos4y/crdantas/releases/tag/v1.0.0](Release 1.0.0)**
+- Versão direto do desenvolvimento
+- Sem acertos ou traduções
+- Conteúdo em inglês e Português
+
 ## Contributing
 Find on our [https://github.com/rodrigos4y/basic-js/issues](issues) the next steps of the project ;)
 Want to contribute? Follow these recommendations.
