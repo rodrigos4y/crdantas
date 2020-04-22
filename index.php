@@ -1,5 +1,5 @@
 <? get_header() ?>
-    
+
     <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -29,7 +29,7 @@
 						</ol>
 						<div class="carousel-inner">
 						  <div class="carousel-item active">
-							<img src="images/crs1.jpg" class="d-block w-100 h-200" alt="Dra. Célia Regina Dantas">
+							<img src="<? bloginfo('template_url') ?>/images/crs1.jpg" alt="Dra. Célia Regina Dantas" class="d-block w-100 h-200">
 						  </div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,18 +45,18 @@
     			<div class="col-md-6 px-5 py-5">
     				<div class="row justify-content-start pt-3 pb-3">
               <div class="col-md-12 heading-section ftco-animate">
-                <h2 class="mb-4">APRESENTAÇÃO</h2>
-                <blockquote class="blockquote">
-                  <p class="mb-0 text-dark">O CR Dantas Advogados possui sólida atuação em Gestão Positiva de Conflitos, 
-                    viabilizando a solução mais eficaz para a demanda apresentada com o uso das técnicas e 
-                    instrumentos aplicáveis ao caso. <br> <br>
+                  <?
+                    $query = new WP_Query([
+                        'post_type' => 'presentation'
+                    ]);
+                    while($query -> have_posts()) : $query -> the_post();
+                  ?>
 
-                    Primamos pela autocomposição das demandas, sem prescindir da atuação judicial ética e adequada. <br> <br>
-
-                    Nosso objetivo é entregar a solução mais eficaz, temporal, emocional e financeiramente econômica 
-                    para nossos clientes em todas as situações.
-                  </p>
-                </blockquote>
+                        <h2 class="mb-4"><? the_title(); ?></h2>
+                        <blockquote class="blockquote">
+                        <p class="mb-0 text-dark"><? the_content(); ?></p>
+                        </blockquote>
+                    <? endwhile ?>
               </div>
 		        </div>
 	        </div>
