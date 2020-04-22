@@ -2,15 +2,14 @@
 if(isset($_POST['email'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "you@yourdomain.com";
-    $email_subject = "Your email subject line";
+    $email_to = "contato@crdantasadv.com.br";
+    $email_subject = "Contato do site";
  
     function died($error) {
         // your error code can go here
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-        echo "These errors appear below.<br /><br />";
+        echo "Nos deculpe mas houve um erro no envio do seu formulário. ";
         echo $error."<br /><br />";
-        echo "Please go back and fix these errors.<br /><br />";
+        echo "Tente enviar novamente.<br /><br />";
         die();
     }
  
@@ -20,7 +19,7 @@ if(isset($_POST['email'])) {
         !isset($_POST['email']) ||
         !isset($_POST['subject']) ||
         !isset($_POST['message'])) {
-        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+        died('Nos deculpe mas houve um erro no envio do seu formulário.');       
     }
  
      
@@ -34,24 +33,24 @@ if(isset($_POST['email'])) {
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
  
   if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+    $error_message .= 'Esse e-mail que você colocou não parece válido.<br />';
   }
  
     $string_exp = "/^[A-Za-z .'-]+$/";
  
   if(!preg_match($string_exp,$name)) {
-    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    $error_message .= 'Esse nome não parece ser válido.<br />';
   }
  
   if(strlen($message) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    $error_message .= 'Os comentários que foram colocados não parecem ser válidos.<br />';
   }
  
   if(strlen($error_message) > 0) {
     died($error_message);
   }
  
-    $email_message = "Form details below.\n\n";
+    $email_message = "Form details belowDetalhes do formulário.\n\n";
  
      
     function clean_string($string) {
@@ -75,7 +74,7 @@ $headers = 'From: '.$email_from."\r\n".
  
 <!-- include your own success html here -->
  
-Thank you for contacting us. We will be in touch with you very soon.
+Obrigado pelo contato. Retornaremos em breve.
  
 <?php
  
