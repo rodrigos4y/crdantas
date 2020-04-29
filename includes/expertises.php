@@ -49,7 +49,7 @@ function expertises() {
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'query_var'             => 'expertise',
+		'query_var'             => true,
 		'capability_type'       => 'post',
 	);
 	register_post_type( 'expertises', $args );

@@ -36,7 +36,7 @@
         wp_enqueue_script('rdfreitas_main-js', get_stylesheet_directory_uri() . '/js/main.js');
     }
 
-    require_once('post-presentation.php');
+    require_once(get_template_directory().'/includes/post-presentation.php');
     require_once(get_template_directory().'/includes/expertises.php');
 
 ?>
