@@ -26,6 +26,7 @@
             'capability_type' => 'post',
             'hierarchical' => false,
             'menu_position' => 5,
+            'menu_icon' => 'dashicons-businesswoman',
             'supports' => array('title', 'editor', 'thumbnail')
         );
 
