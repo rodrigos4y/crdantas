@@ -20,13 +20,13 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Sobre Nós</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Serviços</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contato</a></li>
-	        </ul>
+		  	<?
+				wp_nav_menu([
+					'theme_location' => 'crdantas_principal',
+					'container' => 'ul',
+					'menu_class' => 'navbar-nav ml-auto'
+				])
+			?>
 	      </div>
 	    </div>
 	  </nav>
