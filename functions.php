@@ -4,6 +4,20 @@
 
     add_action('init', 'rdfreitas_action_init');
 
+    add_theme_support('post-thumbnails');
+    add_theme_support( 'custom-logo' );
+
+    function crdantas_custom_logo_setup() {
+        $defaults = array(
+        'height'      => 100,
+        'width'       => 100,
+        'flex-height' => true,
+        'flex-width'  => true,
+        );
+        add_theme_support( 'custom-logo', $defaults );
+    }
+    add_action( 'after_setup_theme', 'crdantas_custom_logo_setup' );
+
     function rdfreitas_add_script_header(){
 
         wp_enqueue_style('rdfreitas_iconic-bootstrap', get_stylesheet_directory_uri().'/css/open-iconic-bootstrap.min.css');
