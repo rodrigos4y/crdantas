@@ -29,7 +29,16 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="block-2 ftco-animate">
 						<div class="flipper">
-							<div class="front" style="background-image: url(/images/crs1.jpg);">
+							<div class="front" style="background-image: url(<?
+								$query = new WP_Query([
+									'category_name' => 'about'
+								]);
+								while($query -> have_posts()) : $query -> the_post();
+									if ( has_post_thumbnail() ) {
+										echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );
+									}
+								endwhile;
+							?>)">
 								<div class="box">
 								<h2>Dra. Célia Regina 
 									Pereira Dantas
@@ -57,17 +66,16 @@
 			</div>
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-lg-10 col-md-10 col-sm-6">
-					<h2 class="text-info text-center">Dra. Célia Regina 
-						Pereira Dantas
-					</h2>
-					<p class="text-secondary">
-						Advogada com mais de 20 (vinte) anos de exercício profissional. Atuante em Direito Contratual, Direito Parental e Gestão 
-						Positiva de Conflitos. Presidente da Comissão de Gestão Positiva de Conflitos da Associação Brasileira de Advogados no 
-						Rio de Janeiro – ABA RJ. Especialista em Gestão Jurídica e Processo Civil pelo Instituto Brasileiro de Mercado de 
-						Capitais - IBMEC. Delegada da Comissão de Defesa, Assistência e Prerrogativa (CDAP) e mentora de Jovens Advogados 
-						pela  OAB/RJ. Orientadora de Aprendizagem em Ambiente de Ensino a Distância pelo Instituto de Logística da Aeronáutica – ILA. 
-						Mediadora de Conflitos. Cofundadora do instablog @Juri_DICAS. Sócia fundadora do escritório CR Dantas Advogados.
-					</p>
+				<?
+                    $query = new WP_Query([
+                        'category_name' => 'about'
+                    ]);
+                    while($query -> have_posts()) : $query -> the_post();
+                ?>
+
+					<h2 class="text-info text-center"><? the_title(); ?></h2>
+					<p class="text-secondary"><? the_content(); ?></p>
+					<? endwhile; ?>
 				</div>
 			</div>
         </div>

@@ -2,6 +2,22 @@
     add_action('wp_enqueue_scripts', 'rdfreitas_add_script_header');
     add_action('wp_footer', 'rdfreitas_add_script_footer');
 
+    add_action('init', 'rdfreitas_action_init');
+
+    add_theme_support('post-thumbnails');
+    add_theme_support( 'custom-logo' );
+
+    function crdantas_custom_logo_setup() {
+        $defaults = array(
+        'height'      => 100,
+        'width'       => 100,
+        'flex-height' => true,
+        'flex-width'  => true,
+        );
+        add_theme_support( 'custom-logo', $defaults );
+    }
+    add_action( 'after_setup_theme', 'crdantas_custom_logo_setup' );
+
     function rdfreitas_add_script_header(){
 
         wp_enqueue_style('rdfreitas_iconic-bootstrap', get_stylesheet_directory_uri().'/css/open-iconic-bootstrap.min.css');
@@ -35,6 +51,17 @@
         wp_enqueue_script('rdfreitas_scrollax-js', get_stylesheet_directory_uri() . '/js/scrollax.min.js');
         wp_enqueue_script('rdfreitas_main-js', get_stylesheet_directory_uri() . '/js/main.js');
     }
+
+    function rdfreitas_action_init(){
+        register_nav_menu('crdantas_principal', 'Menu Principal (cabeçalho)');
+        register_nav_menu('crdantas_rodape', 'Menu Rodapé');
+    }
+
+    function add_menuclass($ulclass) {
+        return preg_replace('/<a /', '<a class="nav_item nav-link"', $ulclass);
+     }
+    add_filter('wp_nav_menu','add_menuclass');
+
 
     require_once(get_template_directory().'/includes/post-presentation.php');
     require_once(get_template_directory().'/includes/expertises.php');
