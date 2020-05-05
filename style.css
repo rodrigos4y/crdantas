@@ -11,3 +11,21 @@ Text Domain: crdantas
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, theme-options, threaded-comments
 
 */
+
+/*
+    Use font icon instead bullet
+*/
+ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    padding-left: 1.3em;
+  }
+  li:before {
+    content: "\f00c"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+  }

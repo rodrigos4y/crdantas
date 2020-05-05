@@ -1,3 +1,8 @@
+<?
+/*
+    Template name: Homepage
+*/
+?>
 <? get_header() ?>
 
     <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
@@ -9,7 +14,9 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
             	<span>Experiência</span> . <span>Inovação</span> . <span>Excelência</span>
             </h1>
-            <p><a href="contact.html#contact-form" class="btn btn-primary py-3 px-4">Solicite uma Consulta</a></p>
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('contact-button') ) : 
+ 
+			endif; ?>
           </div>
         </div>
       </div>

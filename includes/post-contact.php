@@ -26,6 +26,7 @@
             'capability_type' => 'post',
             'hierarchical' => false,
             'menu_position' => 5,
+            'menu_icon' => 'dashicons-email-alt',
             'supports' => array('title', 'thumbnail')
         );
 
@@ -33,50 +34,34 @@
         flush_rewrite_rules();
     }
 
-    add_action("admin_init", "admin_init_contato");
-
-    function admin_init_contato(){
-        add_meta_box("contato-meta", "Contato", "contato", "contatos", "normal", "low");
-    }
-    function contato(){
-        global $post;
-        
-        $endereco = get_post_meta($post->ID, 'endereco', true);
-        $telefone = get_post_meta($post->ID, 'telefone', true);
-        $email = get_post_meta($post->ID, 'email', true);
-?>
-        <p>
-            <label>Endereço: </label>
-            <input name="endereco" type="text" value="<? echo $endereco; ?>">
-        </p>
-        <p>
-            <label>Telefone: </label>
-            <input name="telefone" type="text" value="<? echo $telefone; ?>">
-        </p>
-        <p>
-            <label>E-mail: </label>
-            <input name="email" type="text" value="<? echo $email; ?>">
-        </p>
-<?
-    }
-
-    //Salvar os valores no post
+    function crdantas_get_contact_meta_box( $meta_boxes ) {
+        $prefix = 'crdantas-';
     
-
-    function save_details_contato(){
-        global $post;
-
-        $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
-        $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-
-        if($post && $post->post_type && $post->post_type == 'contatos') {
-            update_post_meta($post->ID, "endereco", $endereco);
-            update_post_meta($post->ID, "telefone", $telefone);
-            update_post_meta($post->ID, "email", $email);
-        }
+        $meta_boxes[] = array(
+            'id' => 'contact',
+            'title' => esc_html__( 'Contato', 'crdantas' ),
+            'post_types' => array('contatos' ),
+            'context' => 'after_title',
+            'priority' => 'default',
+            'autosave' => 'false',
+            'fields' => array(
+                array(
+                    'id' => $prefix . 'contact_phone',
+                    'type' => 'text',
+                    'name' => esc_html__( 'Telefone', 'crdantas' ),
+                    'desc' => esc_html__( 'Coloque o telefone de contato', 'crdantas' ),
+                ),
+                array(
+                    'id' => $prefix . 'contact_email',
+                    'type' => 'text',
+                    'name' => esc_html__( 'E-mail', 'crdantas' ),
+                    'desc' => esc_html__( 'Coloque o e-mail de contato', 'crdantas' ),
+                )
+            ),
+        );
+    
+        return $meta_boxes;
     }
-
-    add_action('save_post', 'save_details_contato');
+    add_filter( 'rwmb_meta_boxes', 'crdantas_get_contact_meta_box' );
 
 ?>
