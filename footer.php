@@ -33,9 +33,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved &reg;  &nbsp;<span style="color: #eac15a;">CR DANTAS</span>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved &reg;  &nbsp;<span style="color: #eac15a;">CR DANTAS</span></p>
+            <p>Developed by &nbsp;<a href="https://rodrigos4y.github.io/"><span style="color: #eac15a;">rdfreitas</span></a></p>
           </div>
         </div>
       </div>

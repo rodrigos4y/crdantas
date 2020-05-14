@@ -1658,6 +1658,14 @@ textarea.form-control {
 		color: rgba(255,255,255,.8);
 	}
 }
+.subtitle{
+	font-weight: 700;
+	font-family: roboto;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+	text-align: center;
+	color: #eac15a
+}
 
 
 //SIDEBAR SEARCH
@@ -1783,6 +1791,38 @@ textarea.form-control {
 			}
 		}
 	}
+}
+.list-unstyled{
+	padding: 0;
+	list-style: none;
+
+	ul{
+		list-style: none;
+		padding-left: 0;
+
+		li{
+			font-size: 12px;
+			margin: 20px 0;
+			border-bottom: 1px solid #000;
+			padding-bottom: 5px;
+		}
+	}
+
+	.widget_search{
+		.searchform{
+			input{
+				width: 100%;
+
+				&#searchsubmit{
+					margin-top: 10px;
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+.widget_custom_html{
+	list-style: none;
 }
 
 //### .block-2 

@@ -67,14 +67,7 @@
             'before_title' => '<h2 class="ftco-heading-2" style="color: #eac15a;">',
             'after_title' => '</h2>',
         ) );
-        register_sidebar( array(
-            'name' => __( 'Botão de contato ', 'crdantas' ),
-            'id' => 'contact-button',
-            'before_widget' => '<p><a href="https://rdfreitas.com.br/crdantas/contatos/" class="btn btn-primary py-3 px-4">',
-            'after_widget' => '</a></p>',
-            'before_title' => '<p style="display:none;">',
-            'after_title' => '</p>',
-        ) );
+        
     }
     add_action( 'widgets_init', 'crdantas_widgets_init' );
 
@@ -82,6 +75,20 @@
         return preg_replace('/<a /', '<a class="nav_item nav-link"', $ulclass);
      }
     add_filter('wp_nav_menu','add_menuclass');
+
+    register_sidebar([
+        'name' => 'Barra Lateral',
+        'id' => 'rdfreitas-sidebar',
+        'description' => 'Área Lateral',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ]);
+    register_sidebar( [
+        'name' => 'Botão de contato ',
+        'id' => 'contact-button',
+        'before_title' => '<p style="display:none;">',
+        'after_title' => '</p>',
+    ] );
 
 
     require_once(get_template_directory().'/includes/post-presentation.php');

@@ -5,7 +5,17 @@
 ?>
 <? get_header(); ?>
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url(<?
+								$query = new WP_Query([
+                  'post_type' => 'page',
+                  'pagename' => 'contatos'
+								]);
+								while($query -> have_posts()) : $query -> the_post();
+									if ( has_post_thumbnail() ) {
+										echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );
+									}
+								endwhile;
+							?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
