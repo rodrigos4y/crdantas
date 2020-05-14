@@ -12,6 +12,17 @@ Want to contribute? Follow these recommendations.
 
 ## History
 
+**[v1.0.1](https://github.com/rodrigos4y/crdantas/releases/tag/v1.0.1)**
+- Adjusting the home text by placing the texts in Portuguese
+- Exchanged about.html page with services.html page
+- Translated about.html page
+- Translated services.html page
+- Changed page links in the menu
+- Translate the contact page
+- Fixed a bug in the banner title on the about page
+- Fixed a bug in the banner title on the service page
+
+
 **[v1.0.0](https://github.com/rodrigos4y/crdantas/releases/tag/v1.0.0)**
 - Versão direto do desenvolvimento
 - Sem acertos ou traduções
