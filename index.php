@@ -1,6 +1,21 @@
+<?
+/*
+    Template name: Homepage
+*/
+?>
 <? get_header() ?>
 
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap js-fullheight" style="background-image: url(<?
+		$query = new WP_Query([
+			'post_type' => 'page',
+			'pagename' => 'home'
+		]);
+		while($query -> have_posts()) : $query -> the_post();
+			if ( has_post_thumbnail() ) {
+				echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );
+			}
+		endwhile;
+	?>);" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -9,7 +24,7 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
             	<span>Experiência</span> . <span>Inovação</span> . <span>Excelência</span>
             </h1>
-            <p><a href="contact.html#contact-form" class="btn btn-primary py-3 px-4">Solicite uma Consulta</a></p>
+            <?php dynamic_sidebar('contact-button'); ?>
           </div>
         </div>
       </div>

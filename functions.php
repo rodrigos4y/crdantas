@@ -2,8 +2,6 @@
     add_action('wp_enqueue_scripts', 'rdfreitas_add_script_header');
     add_action('wp_footer', 'rdfreitas_add_script_footer');
 
-    add_action('init', 'rdfreitas_action_init');
-
     add_theme_support('post-thumbnails');
     add_theme_support( 'custom-logo' );
 
@@ -52,18 +50,50 @@
         wp_enqueue_script('rdfreitas_main-js', get_stylesheet_directory_uri() . '/js/main.js');
     }
 
-    function rdfreitas_action_init(){
-        register_nav_menu('crdantas_principal', 'Menu Principal (cabeçalho)');
-        register_nav_menu('crdantas_rodape', 'Menu Rodapé');
+    function crdantas_widgets_init() {
+        register_sidebar( array(
+            'name' => __( 'Listagem das Áreas de Experiência ', 'crdantas' ),
+            'id' => 'expertise-footer',
+            'before_widget' => '<div class="ftco-footer-widget mb-4 ml-md-5">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="ftco-heading-2">',
+            'after_title' => '</h2>',
+        ) );
+        register_sidebar( array(
+            'name' => __( 'Redes Sociais ', 'crdantas' ),
+            'id' => 'social-footer',
+            'before_widget' => '<div class="ftco-footer-widget mb-4">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="ftco-heading-2" style="color: #eac15a;">',
+            'after_title' => '</h2>',
+        ) );
+        
     }
+    add_action( 'widgets_init', 'crdantas_widgets_init' );
 
     function add_menuclass($ulclass) {
         return preg_replace('/<a /', '<a class="nav_item nav-link"', $ulclass);
      }
     add_filter('wp_nav_menu','add_menuclass');
 
+    register_sidebar([
+        'name' => 'Barra Lateral',
+        'id' => 'rdfreitas-sidebar',
+        'description' => 'Área Lateral',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>'
+    ]);
+    register_sidebar( [
+        'name' => 'Botão de contato ',
+        'id' => 'contact-button',
+        'before_title' => '<p style="display:none;">',
+        'after_title' => '</p>',
+    ] );
+
 
     require_once(get_template_directory().'/includes/post-presentation.php');
+    require_once(get_template_directory().'/includes/post-services.php');
+    require_once(get_template_directory().'/includes/post-contact.php');
     require_once(get_template_directory().'/includes/expertises.php');
 
 ?>
